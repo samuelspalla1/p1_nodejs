@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Frutas</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+
+</head>
+<body>
+    <main class="container">
+        <h2>Lista de Frutas</h2>
+    <button onclick="window.location.href='/adicionar_fruta'">Adicionar Nova Fruta</button>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fruta</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fruta in frutas %}
+            <tr>
+                <td>{{ fruta[0] }}</td>
+                <td>{{ fruta[1] }}</td>
+                <td>
+                    <a href="/editar_fruta/{{ fruta[0] }}">Editar</a>
+                    <button class="del" onclick="deletarFruta({{ fruta[0] }})">Deletar</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </main>
+</body>
+<script>
+    function deletarFruta(id) {
+        if (confirm('Tem certeza que deseja deletar esta fruta?')) {
+            window.location.href = '/deletar_fruta/' + id;
+        }
+    }
+</script>
+</html>

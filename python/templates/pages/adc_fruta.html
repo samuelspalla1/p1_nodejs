@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Nova Fruta</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="container">
+        <h2>Adicionar Nova Fruta</h2>
+        <form action="/salvar_fruta" method="POST">
+            <label for="nomeFruta">Nome da Fruta:</label>
+            <input type="text" id="nomeFruta" name="nomeFruta" required>
+            <button type="submit">Salvar</button>
+        </form>
+    </main>
+</body>
+</html>
